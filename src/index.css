@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 dark:bg-loa-bg dark:text-gray-100 transition-colors duration-200;
+  }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 28px;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-gray-50 dark:bg-loa-surface border border-gray-200 dark:border-loa-border rounded-lg;
+  }
+
+  .input-field {
+    @apply w-full px-2.5 py-1 text-sm text-center bg-white dark:bg-loa-card
+           border border-gray-200 dark:border-loa-border rounded
+           text-gray-700 dark:text-gray-300
+           focus:outline-none focus:border-accent-500
+           placeholder:text-gray-400 dark:placeholder:text-gray-600;
+  }
+
+  .select-field {
+    @apply w-full pl-2.5 pr-7 py-1 text-sm text-center bg-white dark:bg-loa-card
+           border border-gray-200 dark:border-loa-border rounded
+           text-gray-700 dark:text-gray-300
+           focus:outline-none focus:border-accent-500
+           cursor-pointer;
+  }
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(123, 104, 238, 0.18) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(123, 104, 238, 0.18);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(123, 104, 238, 0.35);
+}
