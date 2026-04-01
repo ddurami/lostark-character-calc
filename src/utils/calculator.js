@@ -126,8 +126,10 @@ export function calculate(state) {
   const evoCritDmg = state.evo3OneShot * 16;
   const evoAtkSpeed = state.evo3DestructionTank * 4;
 
-  const staticEvoDmg =
-    state.evo2ForbiddenSpell * 10 + state.evo2LimitBreak * 10
+  const supporterEvoDmg = state.hasSupporter ? 14 : 0;
+
+  const staticEvoDmg = supporterEvoDmg
+    + state.evo2ForbiddenSpell * 10 + state.evo2LimitBreak * 10
     + state.evo2KeenSense * 5 + state.evo2OptTraining * 5
     + state.evo3InfinitePower * 8 + state.evo3TimingDomination * 8
     + state.evo3AllOutStrike * 2 + state.evo3DestructionTank * 12
