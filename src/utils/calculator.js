@@ -158,8 +158,8 @@ export function calculate(state) {
   const rawMoveSpeed = 100 + speedFromSwift + supporterSpeed
     + state.classMoveSpeed + braceletMoveSpeed + banquet;
 
-  const displayAtkSpeed = floor2(Math.min(rawAtkSpeed, 140));
-  const displayMoveSpeed = floor2(Math.min(rawMoveSpeed, 140));
+  const displayAtkSpeed = floor2(rawAtkSpeed);
+  const displayMoveSpeed = floor2(rawMoveSpeed);
 
   const moveSpeedExcess = Math.min(Math.max(0, displayMoveSpeed - 100), 40);
   const raidCaptainEfficiency = rcActive ? floor2(moveSpeedExcess * rcConversion / 100) : 0;
