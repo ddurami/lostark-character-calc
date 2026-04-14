@@ -1,12 +1,17 @@
-import { useMemo } from "react";
-import { useCalc } from "../context/CalcContext";
-import { calculate } from "../utils/calculator";
+import { useMemo } from 'react';
+import { useCalc } from '../context/CalcContext';
+import { calculate } from '../utils/calculator';
 
-function ResultRow({ label, value, suffix = "" }) {
+function ResultRow({ label, value, suffix = '' }) {
   return (
     <div className="flex items-center justify-between h-8 px-2">
-      <span className="text-sm text-gray-700 dark:text-gray-300 shrink-0 mr-3">{label}</span>
-      <span className="input-field w-32 shrink-0 tabular-nums">{value}{suffix}</span>
+      <span className="text-sm text-gray-700 dark:text-gray-300 shrink-0 mr-3">
+        {label}
+      </span>
+      <span className="input-field w-32 shrink-0 tabular-nums">
+        {value}
+        {suffix}
+      </span>
     </div>
   );
 }
@@ -23,7 +28,7 @@ function NodeComboRow({ name, multiplier, isBest }) {
   return (
     <div
       className={`flex items-center justify-between h-8 px-2 rounded ${
-        isBest ? "bg-accent-500/5" : ""
+        isBest ? 'bg-accent-500/5' : ''
       }`}
     >
       <div className="flex items-center gap-2">
@@ -34,7 +39,9 @@ function NodeComboRow({ name, multiplier, isBest }) {
           </span>
         )}
       </div>
-      <span className="input-field w-32 shrink-0 tabular-nums">{multiplier}%</span>
+      <span className="input-field w-32 shrink-0 tabular-nums">
+        {multiplier}%
+      </span>
     </div>
   );
 }

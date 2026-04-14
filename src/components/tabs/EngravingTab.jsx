@@ -1,9 +1,9 @@
-import { useCalc } from "../../context/CalcContext";
-import { Select, Toggle, SECTION_LABEL } from "../ui/FormControls";
+import { useCalc } from '../../context/CalcContext';
+import { Select, Toggle, SECTION_LABEL } from '../ui/FormControls';
 import {
   ENGRAVING_GRADE_OPTIONS,
   STONE_LEVEL_OPTIONS,
-} from "../../data/constants";
+} from '../../data/constants';
 
 export default function EngravingTab() {
   const { state, setField } = useCalc();
@@ -13,13 +13,13 @@ export default function EngravingTab() {
       <Select
         label="각인서"
         value={state.raidCaptainGrade}
-        onChange={(v) => setField("raidCaptainGrade", v)}
+        onChange={(v) => setField('raidCaptainGrade', v)}
         options={ENGRAVING_GRADE_OPTIONS}
       />
       <Select
         label="어빌리티 스톤"
         value={state.raidCaptainStone}
-        onChange={(v) => setField("raidCaptainStone", Number(v))}
+        onChange={(v) => setField('raidCaptainStone', Number(v))}
         options={STONE_LEVEL_OPTIONS}
       />
 
@@ -27,13 +27,13 @@ export default function EngravingTab() {
       <Select
         label="각인서"
         value={state.keenBluntGrade}
-        onChange={(v) => setField("keenBluntGrade", v)}
+        onChange={(v) => setField('keenBluntGrade', v)}
         options={ENGRAVING_GRADE_OPTIONS}
       />
       <Select
         label="어빌리티 스톤"
         value={state.keenBluntStone}
-        onChange={(v) => setField("keenBluntStone", Number(v))}
+        onChange={(v) => setField('keenBluntStone', Number(v))}
         options={STONE_LEVEL_OPTIONS}
       />
 
@@ -41,7 +41,7 @@ export default function EngravingTab() {
       <Select
         label="각인서"
         value={state.adrenalineGrade}
-        onChange={(v) => setField("adrenalineGrade", v)}
+        onChange={(v) => setField('adrenalineGrade', v)}
         options={ENGRAVING_GRADE_OPTIONS}
       />
       <div />
@@ -50,7 +50,7 @@ export default function EngravingTab() {
       <Toggle
         label="채용"
         checked={state.massIncrease}
-        onChange={(v) => setField("massIncrease", v)}
+        onChange={(v) => setField('massIncrease', v)}
       />
       <div />
     </div>

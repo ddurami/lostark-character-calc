@@ -6,7 +6,9 @@ function getInitialTheme() {
   if (typeof window !== 'undefined') {
     const stored = localStorage.getItem('theme');
     if (stored) return stored;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
   }
   return 'dark';
 }
@@ -24,7 +26,7 @@ export function ThemeProvider({ children }) {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  const toggle = () => setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+  const toggle = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
 
   return (
     <ThemeContext.Provider value={{ theme, toggle }}>

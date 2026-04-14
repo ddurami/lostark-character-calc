@@ -1,11 +1,20 @@
 import { useState, useEffect } from 'react';
 
-const ROW = 'flex items-center justify-between h-8 px-2';
-const LABEL = 'text-sm font-medium text-gray-700 dark:text-gray-300 shrink-0 mr-3';
+export const ROW = 'flex items-center justify-between h-8 px-2';
+export const LABEL =
+  'text-sm font-medium text-gray-700 dark:text-gray-300 shrink-0 mr-3';
 
 export const SECTION_LABEL = 'text-xs text-accent-500';
 
-export function NumberInput({ label, value, onChange, min = 0, max, integer = false, className = '' }) {
+export function NumberInput({
+  label,
+  value,
+  onChange,
+  min = 0,
+  max,
+  integer = false,
+  className = '',
+}) {
   const [focused, setFocused] = useState(false);
   const [display, setDisplay] = useState(String(value));
 
@@ -17,7 +26,8 @@ export function NumberInput({ label, value, onChange, min = 0, max, integer = fa
     let raw = e.target.value;
     const pattern = integer ? /^\d*$/ : /^\d*\.?\d{0,2}$/;
     if (raw !== '' && !pattern.test(raw)) return;
-    if (raw.length > 1 && raw[0] === '0' && (integer || raw[1] !== '.')) raw = raw.replace(/^0+/, '') || '0';
+    if (raw.length > 1 && raw[0] === '0' && (integer || raw[1] !== '.'))
+      raw = raw.replace(/^0+/, '') || '0';
     setDisplay(raw);
     if (raw === '' || raw === '.') return;
     const num = parseFloat(raw);
@@ -89,9 +99,15 @@ export function Select({ label, value, onChange, options, className = '' }) {
   return (
     <div className={`${ROW} ${className}`}>
       <span className={LABEL}>{label}</span>
-      <select value={value} onChange={(e) => onChange(e.target.value)} className="select-field w-32">
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="select-field w-32"
+      >
         {options.map((opt) => (
-          <option key={opt.value} value={opt.value}>{opt.label}</option>
+          <option key={opt.value} value={opt.value}>
+            {opt.label}
+          </option>
         ))}
       </select>
     </div>
@@ -117,7 +133,9 @@ export function Accordion({ title, defaultOpen = false, children }) {
           className={`opacity-40 dark:invert transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
-      <div className={`overflow-hidden transition-all duration-200 ${isOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+      <div
+        className={`overflow-hidden transition-all duration-200 ${isOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}
+      >
         <div className="px-4 py-3">{children}</div>
       </div>
     </div>
